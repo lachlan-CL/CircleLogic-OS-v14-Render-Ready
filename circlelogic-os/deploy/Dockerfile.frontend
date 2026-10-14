@@ -1,0 +1,5 @@
+FROM caddy:2-alpine
+COPY frontend/index.html /srv/
+COPY frontend/src/app.js frontend/src/icons.js frontend/src/styles.css frontend/src/guides.js /srv/src/
+COPY frontend/assets/circlelogic-logo.svg /srv/assets/circlelogic-logo.svg
+COPY deploy/Caddyfile /etc/caddy/Caddyfile

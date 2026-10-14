@@ -1,0 +1,16 @@
+{
+  "method": "Embedded standalone HTML in Chromium; no live provider traffic",
+  "checks": [
+    "Desktop dashboard and four metrics render",
+    "All 18 routes render, including gated integrations and data health",
+    "Table search filters rows",
+    "Record details and keyboard modal dismissal work",
+    "Preview cannot collect provider secrets",
+    "Local preview task creation and completion work",
+    "Global record search works",
+    "390px mobile layout and navigation work without page overflow",
+    "No uncaught JavaScript errors"
+  ],
+  "javascript_errors": [],
+  "result": "passed"
+}

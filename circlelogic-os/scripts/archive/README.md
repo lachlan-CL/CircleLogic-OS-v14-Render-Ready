@@ -1,0 +1,1 @@
+Historical authoring scripts, retained for context only. Their original paths and output assumptions are not the v05 build process. Do not run them to start the app. Use launcher.py, scripts/http_v05.py and scripts/browser_v05.py from the application root.

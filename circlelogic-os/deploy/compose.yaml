@@ -1,0 +1,63 @@
+# Deployment TEMPLATE: not built or executed in the authoring environment.
+# Run from the repository root with --env-file .env.production.
+services:
+  api:
+    build:
+      context: ..
+      dockerfile: deploy/Dockerfile.api
+    environment: &app_environment
+      APP_ENV: production
+      ALLOW_SIGNUP: 'false'
+      PUBLIC_ORIGIN: ${PUBLIC_ORIGIN:?Set the HTTPS application origin}
+      VAULT_KEY: ${VAULT_KEY:?Supply a persistent vault key}
+      PROVISION_TOKEN: ${PROVISION_TOKEN:?Supply a private operator provisioning token}
+      DATA_DIR: /app/data
+    volumes:
+      - agency_data:/app/data
+    restart: unless-stopped
+    read_only: true
+    tmpfs:
+      - /tmp
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL
+    # No host port: the backend is only reachable through the frontend proxy.
+  frontend:
+    build:
+      context: ..
+      dockerfile: deploy/Dockerfile.frontend
+    environment:
+      DOMAIN: ${DOMAIN:?Set your domain without https or a path}
+    ports:
+      - '80:80'
+      - '443:443'
+    volumes:
+      - caddy_data:/data
+      - caddy_config:/config
+    depends_on:
+      - api
+    restart: unless-stopped
+    security_opt:
+      - no-new-privileges:true
+  worker:
+    profiles: [sync]
+    build:
+      context: ..
+      dockerfile: deploy/Dockerfile.api
+    environment: *app_environment
+    volumes:
+      - agency_data:/app/data
+    command: [python, -m, app.worker, --interval, '900']
+    restart: unless-stopped
+    read_only: true
+    tmpfs:
+      - /tmp
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL
+volumes:
+  agency_data:
+  caddy_data:
+  caddy_config:

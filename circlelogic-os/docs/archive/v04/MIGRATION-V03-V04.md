@@ -1,0 +1,11 @@
+# Migration from v03 to v04
+
+1. Stop writes and take a verified backup of the old database and the corresponding vault key. Keep the key separate and private. Do not run migrations on the only copy.
+2. Install v04 in a separate directory and test against a backup on approved infrastructure. Do not copy the example/testing database into customer production.
+3. Schema migration adds nullable usernames and a unique index. Existing users, hashed passwords, MFA secrets, task/team records and email logins are retained. Existing users without usernames can sign in with their email address in the username field.
+4. On first v04 migration, tenant sample-data settings are disabled. Existing real records are not deleted by the migration. Backend sample fallback is removed entirely.
+5. The UI now shows only five selected sources. Existing Rex/Vault/Domain/Xero/DocuSign data is not automatically reinterpreted as Agentbox or other requested data. Legacy routes remain; decide whether to retire those connections or continue maintaining them separately.
+6. The local launcher creates a distinct testing tenant only if the known testing username does not already exist. It does not reset existing MFA or passwords. Production startup blocks databases containing that username. Use fresh customer production data and an operator-provisioned owner.
+7. Microsoft new consent requests are calendar-only. Previously issued broad tokens or provider grants are not automatically narrowed by code updates. Disconnect and revoke old Microsoft consent/tokens, remove unneeded app permissions, and reauthorise with the reviewed calendar-only configuration. Review and delete retained historical email snapshots through an approved migration process.
+8. The Team page and its invitation-acceptance UI are no longer present. Existing memberships remain in the database and legacy API. Do not send a legacy invitation link expecting the v03 acceptance screen to exist. New separate customer workspaces are provisioned through the operator script.
+9. Validate login, MFA, per-tenant data, roles, source mappings, OAuth callbacks and a complete restore before switching traffic. Roll back using the paired database/key backup, not by guessing a reverse schema migration.

@@ -1,0 +1,7 @@
+{
+  "private_workspace_cli_created": true,
+  "password_not_in_stdout": true,
+  "local_check_succeeded": true,
+  "callback_port_matched": true,
+  "platform": "Linux / Python 3.13.5; synthetic piped input; not Windows native"
+}

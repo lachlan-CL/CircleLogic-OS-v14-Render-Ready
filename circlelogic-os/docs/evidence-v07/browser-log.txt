@@ -1,0 +1,80 @@
+PASS: Private workspace login and real backend MFA work
+PASS: Dashboard starts without fabricated metrics
+PASS: Six integration source tiles are visible
+PASS: Google Calendar tile is visible
+PASS: Google Calendar connection row is present
+PASS: Microsoft Calendar remains present as an alternative
+PASS: Backend setup shows exact Google callback
+PASS: Runtime checks do not claim provider access
+PASS: Google connection window has exactly one paste field
+PASS: Google key field is masked
+PASS: No JSON upload exists
+PASS: Setup guide is directly available
+PASS: Client secret cannot be saved before client ID setup
+PASS: Google guide contains one one-time identifier field
+PASS: Guide displays exact Google redirect URI
+PASS: Guide explains OAuth rather than a standalone API key
+PASS: Saving Google client ID returns to simple key paste field
+PASS: Client secret saves without marking connection live
+PASS: Stored secret is not returned into the DOM
+PASS: Sync is disabled until OAuth consent
+PASS: Diagnostics shows Google read-only scope
+PASS: OAuth starts on official Google Accounts host
+PASS: OAuth requests read-only calendar events scope
+PASS: OAuth requests offline access and explicit consent
+PASS: Client secret is never placed in the browser authorisation URL
+PASS: Synthetic Google callback returns to integrations
+PASS: Google import displays returned calendar count
+PASS: Imported Google event appears in the dashboard
+PASS: Dashboard labels the Google source
+PASS: Updated Google event replaces the previous snapshot entry
+PASS: Successful empty Google import removes previous event instead of inventing data
+PASS: Six source tiles do not cause horizontal mobile overflow
+PASS: Google paste dialog fits mobile viewport
+PASS: Disconnect clears Google credentials
+PASS: Disconnect clears Google one-time setup
+PASS: No browser JavaScript errors
+{
+  "checks_passed": 36,
+  "checks": [
+    "Private workspace login and real backend MFA work",
+    "Dashboard starts without fabricated metrics",
+    "Six integration source tiles are visible",
+    "Google Calendar tile is visible",
+    "Google Calendar connection row is present",
+    "Microsoft Calendar remains present as an alternative",
+    "Backend setup shows exact Google callback",
+    "Runtime checks do not claim provider access",
+    "Google connection window has exactly one paste field",
+    "Google key field is masked",
+    "No JSON upload exists",
+    "Setup guide is directly available",
+    "Client secret cannot be saved before client ID setup",
+    "Google guide contains one one-time identifier field",
+    "Guide displays exact Google redirect URI",
+    "Guide explains OAuth rather than a standalone API key",
+    "Saving Google client ID returns to simple key paste field",
+    "Client secret saves without marking connection live",
+    "Stored secret is not returned into the DOM",
+    "Sync is disabled until OAuth consent",
+    "Diagnostics shows Google read-only scope",
+    "OAuth starts on official Google Accounts host",
+    "OAuth requests read-only calendar events scope",
+    "OAuth requests offline access and explicit consent",
+    "Client secret is never placed in the browser authorisation URL",
+    "Synthetic Google callback returns to integrations",
+    "Google import displays returned calendar count",
+    "Imported Google event appears in the dashboard",
+    "Dashboard labels the Google source",
+    "Updated Google event replaces the previous snapshot entry",
+    "Successful empty Google import removes previous event instead of inventing data",
+    "Six source tiles do not cause horizontal mobile overflow",
+    "Google paste dialog fits mobile viewport",
+    "Disconnect clears Google credentials",
+    "Disconnect clears Google one-time setup",
+    "No browser JavaScript errors"
+  ],
+  "browser_errors": [],
+  "transport": "Embedded Chromium with FastAPI TestClient fetch bridge. No native browser networking or HTTPS.",
+  "provider_requests": "Synthetic Google token and Calendar API responses through the real Engine adapter. No real Google account was used."
+}

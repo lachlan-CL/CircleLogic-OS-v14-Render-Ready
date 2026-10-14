@@ -1,0 +1,24 @@
+{
+  "method": "Embedded Chromium UI with isolated FastAPI TestClients and a simulated Storage adapter; synthetic identities only",
+  "checks": [
+    "Replace sample owner and agent; update sidebar and preserve profile identifiers",
+    "Add profile, reject duplicate email, and persist team via serialized Storage state in a fresh document (storage adapter)",
+    "Assign draft task, propagate member rename, reassign task and rehydrate in a fresh document (storage adapter)",
+    "Mobile team cards, visible Add person button, no page overflow and usable form",
+    "Preview reset removes browser-only edits and restores the sample team",
+    "UI-to-FastAPI signup, authenticator enrollment, persisted named invitation and reissue",
+    "Invite accepted in separate browser context; own MFA required, correct role, task assignment enabled only after enrollment",
+    "Admin deactivation revokes a test-backed session and blocks further workspace access"
+  ],
+  "javascript_errors": [],
+  "result": "passed",
+  "not_covered": [
+    "Actual browser networking/cookies/TLS",
+    "Actual browser localStorage/file-origin persistence",
+    "External email delivery",
+    "Live provider accounts",
+    "Production TLS or hosting",
+    "Other browsers or mobile operating systems",
+    "Independent security audit"
+  ]
+}

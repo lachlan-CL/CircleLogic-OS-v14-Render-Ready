@@ -1,0 +1,12 @@
+{
+  "version": "0.5.0",
+  "checks_passed": 75,
+  "regression_checks": 45,
+  "pilot_checks": 30,
+  "browser_errors": [],
+  "transport": "Embedded Chromium/TestClient bridge; no native browser/provider acceptance",
+  "reports": [
+    "evidence-v05/browser-regression.json",
+    "evidence-v05/browser-pilot.json"
+  ]
+}

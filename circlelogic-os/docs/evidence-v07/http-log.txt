@@ -1,0 +1,28 @@
+{
+  "checks_passed": 21,
+  "checks": [
+    "v07 starts through run.py",
+    "Frontend v07 assets are referenced",
+    "MFA completes over real HTTP",
+    "Fresh dashboard is empty",
+    "Six Brain connections are returned",
+    "Google Calendar is present",
+    "Exact Google callback follows actual origin",
+    "Google key paste requires client ID setup first",
+    "Google client ID setup saves",
+    "Setup read-back contains only client ID",
+    "Single-field Google secret paste saves",
+    "Saved key remains configured, not connected",
+    "Diagnostics does not echo secret",
+    "Google authorisation URL builds without contacting Google",
+    "Authorisation host is Google Accounts",
+    "Read-only Calendar scope is requested",
+    "Offline access and explicit consent are requested",
+    "Client secret is not exposed in authorisation URL",
+    "Invalid callback state is rejected",
+    "Google disconnect succeeds",
+    "Disconnect clears key and setup"
+  ],
+  "transport": "Real localhost HTTP via httpx and Uvicorn. No native browser networking or HTTPS.",
+  "external_provider_requests": 0
+}

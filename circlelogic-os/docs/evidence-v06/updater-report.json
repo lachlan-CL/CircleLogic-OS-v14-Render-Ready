@@ -1,0 +1,15 @@
+{
+  "checks_passed": 9,
+  "checks": [
+    "Dry-run validates without changing code",
+    "Updater refuses an installation whose server port is still in use",
+    "Original v05 package upgrades to v06",
+    "Data, vault key, settings and virtual environment preserved byte-for-byte",
+    "Original source backed up",
+    "All changed files match the packaged hashes",
+    "Reapplying is idempotent",
+    "Local code changes abort the whole update without overwriting",
+    "Protected paths and traversal rejected"
+  ],
+  "platform": "Linux/Python. Windows .cmd and macOS .command wrappers not executed."
+}

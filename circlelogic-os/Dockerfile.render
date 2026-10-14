@@ -1,0 +1,17 @@
+# Single-service Render deployment for CircleLogic OS v14.
+# Set APP_ENV, PUBLIC_ORIGIN, VAULT_KEY and DATA_DIR in Render.
+FROM python:3.13-slim
+ENV PYTHONDONTWRITEBYTECODE=1 PYTHONUNBUFFERED=1 PYTHONPATH=/app/backend DATA_DIR=/app/data
+WORKDIR /app
+COPY backend/requirements.txt /app/backend/requirements.txt
+RUN pip install --no-cache-dir -r /app/backend/requirements.txt \
+ && groupadd --gid 10001 circlelogic \
+ && useradd --uid 10001 --gid 10001 --no-create-home circlelogic \
+ && mkdir -p /app/data && chown -R circlelogic:circlelogic /app/data
+COPY backend/app /app/backend/app
+COPY frontend /app/frontend
+COPY scripts/provision_workspace.py /app/scripts/provision_workspace.py
+COPY run.py /app/run.py
+USER 10001:10001
+EXPOSE 10000
+CMD ["sh", "-c", "exec uvicorn app.main:create_app --factory --host 0.0.0.0 --port ${PORT:-10000} --no-access-log"]

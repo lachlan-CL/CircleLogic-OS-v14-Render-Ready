@@ -1,0 +1,116 @@
+SCREENSHOT: 01-running-login.png
+PASS: Private workspace login and real backend MFA work in embedded UI
+PASS: Two pages retained
+PASS: No example-data toggle in the running app
+PASS: All metrics remain empty before imports
+PASS: Pilot banner identifies running backend and approved test mailbox
+SCREENSHOT: 02-api-connections.png
+PASS: Runtime check shows four actual backend checks
+PASS: Runtime check explicitly disclaims provider access
+SCREENSHOT: 03-backend-checks.png
+PASS: Microsoft paste box enabled
+PASS: Exactly one credential entry field
+PASS: No file-upload or JSON UI in connection window
+PASS: No client ID, tenant ID or redirect in the key window
+PASS: One software name and guide link
+PASS: Key is masked with autofill discouraged
+SCREENSHOT: 04-paste-only-calendar.png
+PASS: Missing setup gives actionable error, not a fake connection
+PASS: Technical identifiers and callback are in guide only
+PASS: Guide never shows or asks for a secret
+PASS: Saving setup returns to an empty key box
+PASS: Setup alone stores no active credentials
+PASS: Published testing password cannot be used as an API key
+PASS: Show-key control works
+PASS: Pasted key saved without creating a live connection
+PASS: Saved secret cleared from the DOM and not shown back
+PASS: Test and sync still disabled before authorisation
+SCREENSHOT: 05-saved-not-connected.png
+PASS: Connection progress identifies missing authorisation
+PASS: Three explicit connection stages
+SCREENSHOT: 06-connection-checks.png
+PASS: Diagnostic download contains no credential values
+PASS: Generated OAuth uses PKCE and explicit account selection
+PASS: Synthetic token exchange returns to integrations
+PASS: Authorisation enables test and sync
+PASS: Import result shows actual returned fixture count
+SCREENSHOT: 07-synthetic-import-result.png
+PASS: Actual adapter output appears in dashboard
+SCREENSHOT: 08-synthetic-calendar-dashboard.png
+PASS: Calendar detail shows private login visibility
+PASS: Updated source appointment replaces original
+PASS: Failed provider refresh retains previous appointment
+PASS: Provider failure appears as a safe diagnostic error
+PASS: Pilot page has no horizontal mobile overflow
+SCREENSHOT: 09-mobile-connections.png
+PASS: Diagnostic dialog fits mobile viewport
+SCREENSHOT: 10-mobile-checks.png
+PASS: Disconnect clears saved credentials and snapshots
+PASS: REA also has one paste-only field
+PASS: REA secret entry reaches the backend without an upload
+PASS: Replace key never returns stored secret
+SCREENSHOT: 11-paste-only-rea.png
+PASS: Compact key dialog fits mobile without horizontal scroll
+PASS: Mobile key field and save button fit without scrolling
+SCREENSHOT: 12-mobile-key-entry.png
+PASS: Closing key window discards unsaved secret
+PASS: agentbox remains honestly gated with a setup guide
+PASS: rpdata remains honestly gated with a setup guide
+PASS: proping remains honestly gated with a setup guide
+PASS: No browser JavaScript errors
+{
+  "checks_passed": 48,
+  "checks": [
+    "Private workspace login and real backend MFA work in embedded UI",
+    "Two pages retained",
+    "No example-data toggle in the running app",
+    "All metrics remain empty before imports",
+    "Pilot banner identifies running backend and approved test mailbox",
+    "Runtime check shows four actual backend checks",
+    "Runtime check explicitly disclaims provider access",
+    "Microsoft paste box enabled",
+    "Exactly one credential entry field",
+    "No file-upload or JSON UI in connection window",
+    "No client ID, tenant ID or redirect in the key window",
+    "One software name and guide link",
+    "Key is masked with autofill discouraged",
+    "Missing setup gives actionable error, not a fake connection",
+    "Technical identifiers and callback are in guide only",
+    "Guide never shows or asks for a secret",
+    "Saving setup returns to an empty key box",
+    "Setup alone stores no active credentials",
+    "Published testing password cannot be used as an API key",
+    "Show-key control works",
+    "Pasted key saved without creating a live connection",
+    "Saved secret cleared from the DOM and not shown back",
+    "Test and sync still disabled before authorisation",
+    "Connection progress identifies missing authorisation",
+    "Three explicit connection stages",
+    "Diagnostic download contains no credential values",
+    "Generated OAuth uses PKCE and explicit account selection",
+    "Synthetic token exchange returns to integrations",
+    "Authorisation enables test and sync",
+    "Import result shows actual returned fixture count",
+    "Actual adapter output appears in dashboard",
+    "Calendar detail shows private login visibility",
+    "Updated source appointment replaces original",
+    "Failed provider refresh retains previous appointment",
+    "Provider failure appears as a safe diagnostic error",
+    "Pilot page has no horizontal mobile overflow",
+    "Diagnostic dialog fits mobile viewport",
+    "Disconnect clears saved credentials and snapshots",
+    "REA also has one paste-only field",
+    "REA secret entry reaches the backend without an upload",
+    "Replace key never returns stored secret",
+    "Compact key dialog fits mobile without horizontal scroll",
+    "Mobile key field and save button fit without scrolling",
+    "Closing key window discards unsaved secret",
+    "agentbox remains honestly gated with a setup guide",
+    "rpdata remains honestly gated with a setup guide",
+    "proping remains honestly gated with a setup guide",
+    "No browser JavaScript errors"
+  ],
+  "browser_errors": [],
+  "transport": "Embedded Chromium with TestClient fetch bridge. No native browser networking, HTTPS or live Microsoft consent tested.",
+  "provider_requests": "Synthetic Microsoft token and Graph responses through the real Engine adapter. No real provider requests."
+}

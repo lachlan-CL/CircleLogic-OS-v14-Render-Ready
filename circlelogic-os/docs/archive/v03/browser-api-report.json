@@ -1,0 +1,13 @@
+{
+  "method": "Chromium UI with in-process FastAPI bridge; browser networking/cookies and provider connections not covered",
+  "checks": [
+    "Create workspace, enrol TOTP, display eight recovery codes, enter dashboard",
+    "UI-created task persists in the backend and replaces sample tasks",
+    "Credential JSON upload, encrypted save, redacted status and no premature live data",
+    "Team invitation generated without sending email",
+    "Workspace settings switch off samples in backend data",
+    "Logout, password login, recovery-code MFA, persisted task after reauthentication"
+  ],
+  "javascript_errors": [],
+  "result": "passed"
+}

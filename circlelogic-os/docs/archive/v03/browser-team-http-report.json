@@ -1,0 +1,6 @@
+{
+  "result": "blocked_before_first_page",
+  "error": "net::ERR_BLOCKED_BY_ADMINISTRATOR",
+  "method": "Attempted Chromium navigation to local FastAPI over HTTP",
+  "validated": false
+}
